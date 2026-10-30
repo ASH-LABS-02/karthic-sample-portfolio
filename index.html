@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Your Name - Your Role | 3D Portfolio Template</title>
+    <meta name="description" content="A customizable interactive 3D portfolio. Replace the sample name, role, projects and contact information with your own." />
+    <meta name="author" content="Your Name" />
+    <meta name="theme-color" content="#e9e4db" />
+    <meta name="robots" content="noindex, nofollow" />
+    <!-- Replace example.com and remove noindex when publishing a personalized site. -->
+    <link rel="canonical" href="https://example.com/" />
+    <link rel="icon" type="image/svg+xml" href="/images/favicon.svg" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Your Name" />
+    <meta property="og:title" content="Your Name - Your Role | 3D Portfolio Template" />
+    <meta property="og:url" content="https://example.com/" />
+    <meta property="og:description" content="Your portfolio introduction goes here." />
+    <meta property="og:image" content="https://example.com/images/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Your Name - interactive portfolio placeholder" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Your Name - Your Role" />
+    <meta name="twitter:description" content="Your portfolio introduction goes here." />
+    <meta name="twitter:image" content="https://example.com/images/og-image.png" />
+    <script type="application/ld+json">
+      {"@context":"https://schema.org","@type":"WebSite","name":"Your Name - Portfolio Template","url":"https://example.com/","description":"Placeholder portfolio. Customize before publishing.","inLanguage":"en"}
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;450;500;550;600;650;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body class="light-theme intro">
+    <div class="experience"><canvas class="experience-canvas" tabindex="0" aria-label="Interactive 3D room. Drag to look around. Use WASD to walk, Q or E to turn, and scroll or pinch to zoom. Tap the floor to walk there, or use the portfolio navigation."></canvas></div>
+    <div id="loader-wrapper" role="status" aria-live="polite">
+      <span class="loader-wordmark">yourname<span>.</span></span>
+      <div class="loader-track"><div class="loader-progress"></div></div>
+      <p id="loader-status">Making a little room for you…</p>
+    </div>
+    <header>
+      <a href="#" id="logo" aria-label="Your Name — return to room">yourname<span>.</span></a>
+      <nav class="room-nav" aria-label="Portfolio">
+        <button type="button" id="room-menu" data-view="room" class="is-active" aria-current="page">Room</button>
+        <button type="button" id="about-menu" data-view="about">About</button>
+        <button type="button" id="projects-menu" data-view="projects">Projects</button>
+        <button type="button" id="contact-btn" data-view="contact">Contact</button>
+      </nav>
+      <button type="button" id="sound-toggle" class="sound-control" data-sound aria-label="Turn sound off" aria-pressed="true">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4V5Z"/><path class="sound-waves" d="M15 8a6 6 0 0 1 0 8m3-11a10 10 0 0 1 0 14"/><path class="sound-slash" d="m16 9 5 6m0-6-5 6"/></svg><span>Sound on</span>
+      </button>
+    </header>
+    <main>
+      <div id="intro-overlay">
+        <div class="intro-card">
+          <h1 class="intro-title">Your Room</h1>
+          <p class="intro-description">A little space for the things I build.<br />Your work, your interests, and your story.</p>
+          <div class="intro-actions">
+            <button id="intro-enter" class="button button--light" type="button">Step inside <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></button>
+            <button class="sound-control sound-control--intro" data-sound type="button" aria-label="Turn sound off" aria-pressed="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4V5Z"/><path class="sound-waves" d="M15 8a6 6 0 0 1 0 8"/><path class="sound-slash" d="m16 9 5 6m0-6-5 6"/></svg><span>Sound on</span></button>
+          </div>
+        </div>
+      </div>
+      <button id="intro-skip" type="button">Skip entrance <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m7 5 7 7-7 7m11-14v14"/></svg></button>
+      <button id="close-btn" type="button" style="display: none" aria-label="Return to room"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m10 5-7 7 7 7M3 12h18"/></svg><span>Back to room</span></button>
+      <div id="look-hint" role="status">
+        <span>Drag to look around</span><i></i><span class="look-hint__desktop"><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> to walk</span><i class="look-hint__desktop"></i><span>Tap floor to walk</span>
+      </div>
+    </main>
+    <footer><span class="footer-credit">An interactive portfolio by Your Name</span><span class="room-location">Your City, Country</span><button id="lighting-toggle" type="button" aria-label="Turn room lights on" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18h6m-5 3h4M8.2 14.1a6 6 0 1 1 7.6 0c-.7.7-.8 1.2-.8 1.9H9c0-.7-.1-1.2-.8-1.9Z"/></svg><span>Lights off</span></button><button id="room-help" type="button" aria-label="Room controls" aria-controls="look-hint" aria-expanded="false">?</button></footer>
+    <dialog id="portfolio-panel" aria-label="Portfolio details">
+      <div class="panel-sheet"><button id="panel-close" class="icon-button" type="button" aria-label="Close panel"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button><div id="panel-content"></div></div>
+    </dialog>
+    <template id="about-content">
+      <div class="about-heading"><img src="/images/avatar-placeholder.svg" alt="Your Name" width="72" height="72" /><p>Nice to meet you.</p></div>
+      <h2 tabindex="-1">I’m Your Name.</h2><p class="panel-lead">Your role.<br />Your personal tagline.</p>
+      <p>[Add a short introduction about yourself, your work, your interests, and where you are based.]</p>
+      <h3>What I work with</h3><div class="skill-list"><span>Skill 01</span><span>Skill 02</span><span>Skill 03</span><span>Skill 04</span><span>Skill 05</span><span>Skill 06</span><span>Skill 07</span><span>Skill 08</span></div>
+      <h3>A little background</h3><p>[Add your education, experience, and the kind of work you enjoy. Replace this paragraph with your own background.]</p>
+      <a class="text-link" href="https://example.com/your-github" target="_blank" rel="me noopener">Explore my GitHub <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 18 18 6M6 6h12v12"/></svg></a>
+    </template>
+    <template id="projects-content"><h2 tabindex="-1">Selected work.</h2><p class="panel-lead">A few things I’ve built.</p><div class="project-list"></div><p class="panel-note">Choose a project to take a closer look.</p></template>
+
+    <template id="contact-content"><h2 tabindex="-1">Let’s talk.</h2><p class="panel-lead">Good things start<br />with a conversation.</p><p>Have an opportunity, an interesting problem, or an idea to build together? I’d love to hear from you.</p><div class="contact-list"><a href="mailto:hello@example.com"><small>EMAIL</small><span>hello@example.com</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 18 18 6M6 6h12v12"/></svg></a><a href="tel:+000000000000"><small>PHONE</small><span>+00 000 000 0000</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 18 18 6M6 6h12v12"/></svg></a></div><div class="contact-socials"><a class="text-link" href="https://example.com/your-github" target="_blank" rel="me noopener">GitHub <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 18 18 6M6 6h12v12"/></svg></a><a class="text-link" href="https://example.com/your-linkedin" target="_blank" rel="me noopener">LinkedIn <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 18 18 6M6 6h12v12"/></svg></a></div></template>
+    <div id="phone-popup" role="dialog" aria-label="Get in touch" aria-hidden="true"><button type="button" id="phone-popup-close" aria-label="Close contact card">×</button><span class="phone-popup__label">Get in touch</span><a class="phone-popup__row" href="mailto:hello@example.com">hello@example.com</a><a class="phone-popup__row" href="tel:+000000000000">+00 000 000 0000</a><a class="phone-popup__row" href="https://example.com/your-github" target="_blank" rel="noopener">GitHub / your-username</a></div>
+    <dialog id="certificate-viewer" aria-labelledby="certificate-title"></dialog>
+    <div id="book-reader" role="dialog" aria-modal="true" aria-label="Book" aria-hidden="true"><div class="book-reader__book"><button class="book-reader__close" type="button" aria-label="Close book">×</button><div class="book-reader__page book-reader__left"></div><div class="book-reader__page book-reader__right"></div></div></div>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /
+
+# Replace with your publishing rules and real domain before launch.

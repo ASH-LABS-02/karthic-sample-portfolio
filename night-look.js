@@ -1,0 +1,21 @@
+// Night art direction matched to the original blue-violet room reference.
+export const NIGHT_LOOK = {
+  roomColor: 0x867ac9,
+  roomIntensity: 0.7,
+  skyColor: 0x5b559f,
+  groundColor: 0x1d183b,
+  skyIntensity: 0.18,
+  moonColor: 0x98a7ff,
+  moonIntensity: 0.12,
+  wallTint: 0xada8b3,
+  floorTint: 0x9791ab,
+  ceilingTint: 0xb6aecb,
+  monitorGlow: 1.15,
+  fanIntensity: 3.2,
+  fanReach: 0.4,
+  lampColor: 0xffe2b5,
+  lampEmission: 0xffedcf,
+  lampIntensity: 0.78,
+  rgbHue: 0.8,
+  rgbSpeed: 0.025,
+};
